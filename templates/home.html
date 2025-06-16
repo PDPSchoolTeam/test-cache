@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Address List</title>
+</head>
+<body>
+<h1>Address List</h1>
+<ul>
+    {% for address in addresses %}
+    <li>
+        <strong>Country:</strong> {{ address.country }}<br>
+        <strong>City:</strong> {{ address.city }}<br>
+        <strong>Street:</strong> {{ address.street }}<br>
+        <strong>Post Code:</strong> {{ address.post_code|default:"N/A" }}
+    </li>
+    <hr>
+    {% empty %}
+    <li>No addresses found.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
